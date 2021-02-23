@@ -1,0 +1,25 @@
+.aboutContainer {
+  display: block;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  text-align: justify;
+  border-radius: 1rem;
+  padding: 1rem;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 6px 6px 10px rgba(32, 32, 32, 0.575);
+}
+
+.homeLink {
+  color: black;
+  display: inline-block;
+  margin: 1rem 0 0 1rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  width: 12rem;
+  background: rgb(255, 255, 255);
+  box-shadow: 6px 6px 10px rgba(32, 32, 32, 0.575);
+}
