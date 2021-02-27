@@ -1,8 +1,9 @@
-var express = require('express')
-var app = express()
+import express from 'express'
+import http from 'http'
 
-app.get('/', function (req, res) {
-  res.send('hello world')
+const app = express()
+const server = http.createServer(app)
+
+server.listern(8080, ()=> {
+  console.log('[server] -> Server listening on port 8080')
 })
-
-app.listen(8080)
