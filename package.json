@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An multiplayer game based on UNO",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
