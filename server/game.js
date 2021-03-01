@@ -5,6 +5,5 @@
   -regras das cartas
   -rotaçao da mesa
   -startgame
- -baralho
  -shuffle
 */
