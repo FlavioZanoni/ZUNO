@@ -9,11 +9,11 @@ function Home() {
     let randomNum = Math.floor(Math.random() * Math.floor(1099)) 
     const [name, setName] = React.useState(`User-${randomNum}`)
     const [code, setCode] = React.useState('')
-    const newRoom = Math.floor(Math.random() * Math.floor(999999))
+    const newRoom = Math.floor(Math.random() * Math.floor(999997))
 
     const handleFormSubmit = () => {
         if (name.trim() && code.trim()) {
-            window.location.href = `https://localhost:3000/${code}`
+            window.location.href = `http://localhost:3000/game/${code}`
             enterRoom()
         } else {
             window.alert('Preencha todos os campos')
@@ -28,7 +28,7 @@ function Home() {
 
     const handleFormSubmitCreate = () => {
         if (name.trim()) {
-            window.location.href = `https://localhost:3000/${newRoom}`
+            window.location.href = `http://localhost:3000/game/${newRoom}`
             createRoom()
         } else {
             window.alert('coloca um nome valido pff')
@@ -53,32 +53,37 @@ function Home() {
         <>
             <div className={styles.forms}>
                 <h1>Entrar em um jogo</h1>
-                <form className={styles.form}>
+                <form className={styles.form} method='POST'>
                     <label htmlFor="name">Seu apelido:</label><br/>
                     <input  className={styles.name}
-                    type="text"
-                    placeholder='ex:(xaolin matador de porco)'
-                    onChange={handleNameChange}
-                    value={name}
+                        id="name"
+                        name="nickname"
+                        type="text"
+                        placeholder='ex:(xaolin matador de porco)'
+                        onChange={handleNameChange}
+                        value={name}
                     /> <br/>
                     <label htmlFor="codigo">Código da sala:</label><br/>
-                    <input id='codigo' 
-                    type="number"
-                    placeholder='15718'
-                    onChange={handleCodeChange}
-                    value={code}
+                    <input className={styles.name}
+                        id="codigo"
+                        type="number"
+                        placeholder='15718'
+                        onChange={handleCodeChange}
+                        value={code}
                     /> <br/> 
                     <button type='reset' onClick={handleFormSubmit}>Entrar na sala</button>
                     <h1>ou</h1>
                 </form>
 
-                <form className={styles.form}>
+                <form className={styles.form} method="POST">
                     <label htmlFor="name">Seu apelido:</label><br/>
                     <input className={styles.name}
-                    type="text"
-                    placeholder='ex:(xaolin matador de porco)'
-                    onChange={handleNameChange}
-                    value={name}
+                        id="name"
+                        name="nickname"
+                        type="text"
+                        placeholder='ex:(xaolin matador de porco)'
+                        onChange={handleNameChange}
+                        value={name}
                     /> <br/>
                     <button type="reset" onClick={handleFormSubmitCreate}> criar sala</button>
                 </form>

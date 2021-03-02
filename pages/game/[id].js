@@ -1,13 +1,6 @@
-export async function getServerSideProps() {
-    const res = await fetch('API')
-    const data = await res.json()
+import { useRouter } from 'next/router'
 
-    return {props: { data }}
-}
-
-
-
-function Game({ data }) {
+function Game() {
     const router = useRouter()
     const id = router.query.id
 
