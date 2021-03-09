@@ -14,30 +14,17 @@ function Home() {
     const handleFormSubmit = () => {
         if (name.trim() && code.trim()) {
             window.location.href = `http://localhost:3000/game/${code}`
-            enterRoom()
         } else {
             window.alert('Preencha todos os campos')
         }
     }
 
-    // enter room
-    const enterRoom = () => {
-        console.log('enterRoom')
-    }
-
-
     const handleFormSubmitCreate = () => {
         if (name.trim()) {
-            window.location.href = `http://localhost:3000/game/${newRoom}`
-            createRoom()
+            window.location.href = `http://localhost:3000/game/create/${newRoom}`
         } else {
             window.alert('coloca um nome valido pff')
         }
-    }
-
-    // create room
-    const createRoom = () => {
-        console.log(newRoom)
     }
 
     // handle change
@@ -48,7 +35,6 @@ function Home() {
         setCode(event.target.value)
     }
 
-
     return (
         <>
             <div className={styles.forms}>
@@ -57,7 +43,7 @@ function Home() {
                     <label htmlFor="name">Seu apelido:</label><br/>
                     <input  className={styles.name}
                         id="name"
-                        name="nickname"
+                        name="name"
                         type="text"
                         placeholder='ex:(xaolin matador de porco)'
                         onChange={handleNameChange}
@@ -67,6 +53,7 @@ function Home() {
                     <input className={styles.name}
                         id="codigo"
                         type="number"
+                        name="code"
                         placeholder='15718'
                         onChange={handleCodeChange}
                         value={code}
@@ -79,7 +66,7 @@ function Home() {
                     <label htmlFor="name">Seu apelido:</label><br/>
                     <input className={styles.name}
                         id="name"
-                        name="nickname"
+                        name="name"
                         type="text"
                         placeholder='ex:(xaolin matador de porco)'
                         onChange={handleNameChange}
@@ -88,7 +75,6 @@ function Home() {
                     <button type="reset" onClick={handleFormSubmitCreate}> criar sala</button>
                 </form>
             </div>
-
 
             <footer className={styles.footer}>
                 <p>Criado por: takezo e smokau</p>
